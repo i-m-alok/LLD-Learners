@@ -1,1 +1,0 @@
-# car-parking-lot-lld
