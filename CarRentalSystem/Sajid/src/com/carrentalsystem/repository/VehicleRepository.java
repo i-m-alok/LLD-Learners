@@ -2,13 +2,14 @@ package com.carrentalsystem.repository;
 
 import com.carrentalsystem.model.Vehicle;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class VehicleRepository {
-    private List<Vehicle> vehicles;
+    public static List<Vehicle> vehicles = new ArrayList<>();
 
-
-    public void AddVehicle(Vehicle vehicle) {
+    public boolean addVehicle(Vehicle vehicle) {
         vehicles.add(vehicle);
+        return true;
     }
 }
