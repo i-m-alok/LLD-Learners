@@ -11,3 +11,6 @@ We will focus on the following set of requirements while designing our Car Renta
 3. The system should collect a late-fee for vehicles returned after the due date. 
 4. Members should be able to search the vehicle inventory and reserve any available vehicle. 
 5. Members should be able to cancel their reservations.
+
+Reference:
+https://akshay-iyangar.github.io/system-design/grokking-ood/examples/java/car-rental-system.html
