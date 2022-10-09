@@ -1,42 +1,63 @@
 package com.carrentalsystem.model;
 
 import java.util.Date;
+import java.util.UUID;
 
 public class Booking {
-    private int id;
-    private Vehicle vehicle; // it will accept instances of all the child classes of Vehicle
-    private Date bookingDate;
-    private Date expectedReturnDate;
+  private UUID id;
+  private Vehicle vehicle; // it will accept instances of all the child classes of Vehicle
+  private Date bookingDate;
+  private Date expectedReturnDate;
 
-    public int getId() {
-        return id;
-    }
+  //think about how we can create a bidirectional relationship between user and booking
+  private  User user;
 
-    public void setId(int id) {
-        this.id = id;
-    }
+  public Booking(Vehicle vehicle, Date bookingDate, Date expectedReturnDate, User user) {
+    this.id = UUID.randomUUID();
+    this.vehicle = vehicle;
+    this.bookingDate = bookingDate;
+    this.expectedReturnDate = expectedReturnDate;
+    this.user = user;
+  }
 
-    public Vehicle getVehicle() {
-        return vehicle;
-    }
+  public UUID getId() {
+    return id;
+  }
 
-    public void setVehicle(Vehicle vehicle) {
-        this.vehicle = vehicle;
-    }
+  public void setId(UUID id) {
+    this.id = id;
+  }
 
-    public Date getBookingDate() {
-        return bookingDate;
-    }
+  public User getUser() {
+    return user;
+  }
 
-    public void setBookingDate(Date bookingDate) {
-        this.bookingDate = bookingDate;
-    }
+  public void setUser(User user) {
+    this.user = user;
+  }
 
-    public Date getExpectedReturnDate() {
-        return expectedReturnDate;
-    }
+  public Vehicle getVehicle() {
+    return vehicle;
+  }
 
-    public void setExpectedReturnDate(Date expectedReturnDate) {
-        this.expectedReturnDate = expectedReturnDate;
-    }
+  public void setVehicle(Vehicle vehicle) {
+    this.vehicle = vehicle;
+  }
+
+  public Date getBookingDate() {
+    return bookingDate;
+  }
+
+  public void setBookingDate(Date bookingDate) {
+    this.bookingDate = bookingDate;
+  }
+
+  public Date getExpectedReturnDate() {
+    return expectedReturnDate;
+  }
+
+  public void setExpectedReturnDate(Date expectedReturnDate) {
+    this.expectedReturnDate = expectedReturnDate;
+  }
+
 }

@@ -1,5 +1,6 @@
 package com.carrentalsystem.model;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
 
@@ -16,6 +17,7 @@ public class User {
         this.name = name;
         this.drivingLicense = drivingLicense;
         this.email = email;
+        this.bookings = new ArrayList<>();
     }
 
     public String getEmail() {
@@ -61,4 +63,13 @@ public class User {
     public void addBooking(Booking booking){
         this.bookings.add(booking);
     }
+
+    //this logic can be changed for extensiblity such that when we require the history of bookings
+    //for a particular user, we can keep a separate storage of all the cancelled/returned bookings
+    //and filter out based on the user.
+    public void removeBooking(Booking booking){
+        this.bookings.remove(booking);
+        //CANCELLED_BOOKINGS.ADD(BOOKING(CONTAINS USER))
+    }
+
 }

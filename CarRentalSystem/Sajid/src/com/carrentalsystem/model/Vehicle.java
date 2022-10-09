@@ -1,54 +1,47 @@
 package com.carrentalsystem.model;
 
-import java.util.UUID;
-
 public class Vehicle {
-    private int uniqueId;
-    private int fuelCapacity;
-    private String manufacturer;
-    private String model;
+  private String regNum;
+  private int fuelCapacity;
+  private String manufacturer;
+  private String model;
 
-    public Vehicle(int uniqueId, String manufacturer, String model) {
-        this.uniqueId = uniqueId;
-        this.manufacturer = manufacturer;
-        this.model = model;
-    }
+  public Vehicle(String regNum, String manufacturer, String model) {
+    this.regNum = regNum;
+    this.manufacturer = manufacturer;
+    this.model = model;
+  }
 
-    public String getManufacturer() {
-        return manufacturer;
-    }
+  public String getRegNum() {
+    return regNum;
+  }
 
-    public void setManufacturer(String manufacturer) {
-        this.manufacturer = manufacturer;
-    }
+  public void setRegNum(String regNum) {
+    this.regNum = regNum;
+  }
 
-    public String getModel() {
-        return model;
-    }
+  public String getManufacturer() {
+    return manufacturer;
+  }
 
-    public void setModel(String model) {
-        this.model = model;
-    }
+  public void setManufacturer(String manufacturer) {
+    this.manufacturer = manufacturer;
+  }
 
-    public String getRegistrationNumber() {
-        return registrationNumber;
-    }
+  public String getModel() {
+    return model;
+  }
 
-    public void setRegistrationNumber(String registrationNumber) {
-        this.registrationNumber = registrationNumber;
-    }
+  public void setModel(String model) {
+    this.model = model;
+  }
 
-    private String registrationNumber;
+  public int getFuelCapacity() {
+    return fuelCapacity;
+  }
 
-    public int getUniqueId() {
-        return uniqueId;
-    }
+  public void setFuelCapacity(int fuelCapacity) {
+    this.fuelCapacity = fuelCapacity;
+  }
 
-    public int getFuelCapacity() {
-        return fuelCapacity;
-    }
-
-    public void setFuelCapacity(int fuelCapacity) {
-        this.fuelCapacity = fuelCapacity;
-    }
 }
