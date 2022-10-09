@@ -3,9 +3,9 @@ package com.carrentalsystem.model;
 public class Car extends Vehicle {
     private CarType type;
 
-    public Car(int uniqueId, String manufacturer, String model, CarType type) {
-        super(uniqueId, manufacturer, model);
-        this.type = type;
+    public Car(String regNum, String manufacturer, String model, String type) {
+        super(regNum, manufacturer, model);
+        this.type = CarType.valueOf(type);
     }
 
     public CarType getType() {

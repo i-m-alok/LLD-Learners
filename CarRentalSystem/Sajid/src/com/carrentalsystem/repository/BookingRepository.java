@@ -1,5 +1,6 @@
 package com.carrentalsystem.repository;
 
+import com.carrentalsystem.exception.BookingNotFoundException;
 import com.carrentalsystem.model.Booking;
 
 import java.util.ArrayList;
@@ -14,4 +15,21 @@ public class BookingRepository {
 
     return true;
   }
+
+  public boolean deleteBooking(Booking booking) throws BookingNotFoundException {
+
+    if (!bookings.contains(booking)) {
+      throw new BookingNotFoundException("Booking not found..");
+    }
+    booking.getUser().removeBooking(booking);
+    bookings.remove(booking);
+    return true;
+  }
+
+  //always include a findall method
+
+  public List<Booking> getAll(){
+    return bookings;
+  }
+
 }

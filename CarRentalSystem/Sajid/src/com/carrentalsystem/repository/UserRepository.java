@@ -1,5 +1,7 @@
 package com.carrentalsystem.repository;
 
+import com.carrentalsystem.exception.BookingNotFoundException;
+import com.carrentalsystem.exception.UserNotFoundException;
 import com.carrentalsystem.model.Booking;
 import com.carrentalsystem.model.User;
 
@@ -22,4 +24,24 @@ public class UserRepository {
       }
     }
   }
+
+  public User getByEmail(String email) throws UserNotFoundException {
+    for(User user : users){
+       if(user.getEmail().equals(email)){
+         return user;
+       }
+    }
+    throw new UserNotFoundException("UserNotFound...");
+  }
+
+  public Booking getUserBookingByRegNum(User user, String regNum) throws BookingNotFoundException {
+
+      for(Booking booking : user.getBookings()){
+        if(booking.getVehicle().getRegNum().equals(regNum)){
+          return booking;
+        }
+      }
+     throw new BookingNotFoundException("Booking Not Found");
+  }
+
 }

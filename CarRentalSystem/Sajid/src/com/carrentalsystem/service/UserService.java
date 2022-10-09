@@ -1,5 +1,8 @@
 package com.carrentalsystem.service;
 
+import com.carrentalsystem.exception.BookingNotFoundException;
+import com.carrentalsystem.exception.UserNotFoundException;
+import com.carrentalsystem.model.Booking;
 import com.carrentalsystem.model.User;
 import com.carrentalsystem.repository.UserRepository;
 
@@ -11,7 +14,15 @@ public class UserService {
     boolean isRegistered = userRepository.addUser(user);
 
     if (isRegistered) {
-      System.out.println("Successfully Registered");
+      System.out.println("User Successfully Registered");
     } else System.out.println("User Registration Failed....Try again");
+  }
+
+  public User getByEmail(String email) throws UserNotFoundException {
+   return userRepository.getByEmail(email);
+  }
+
+  public Booking getUserBookingByRegNum(User user, String regNum) throws BookingNotFoundException {
+    return userRepository.getUserBookingByRegNum(user, regNum);
   }
 }
